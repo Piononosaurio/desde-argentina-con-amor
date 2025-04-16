@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi novia, la más fuerte y mi orgullo</title>
+  <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -2;
+      opacity: 0.4;
+      filter: blur(12px) brightness(0.8) sepia(0.1);
+      transition: background-image 1s ease-in-out;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.9;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .fondo-dia::before {
+      background-image: url('imagenes/fondo-dia.jpg');
+    }
+
+    .fondo-noche::before {
+      background-image: url('imagenes/fondo-noche.jpg');
+    }
+
+    .fondo-dia::after {
+      background-image: url('imagenes/fondo-dia.jpg');
+    }
+
+    .fondo-noche::after {
+      background-image: url('imagenes/fondo-noche.jpg');
+    }
+
+    .letter-container {
+      background: rgba(255, 255, 255, 0.568);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 800px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'La Belle Aurore', cursive;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .letter-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4em;
+      line-height: 1.8em;
+      white-space: pre-line;
+      text-align: justify;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    }
+
+    #play-button {
+      margin-top: 2rem;
+      background: #fff4ee;
+      color: #333;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .thank-you {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      font-size: 1.4em;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 3s ease 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #333;
+      margin-left: 3px;
+      animation: blink 1s infinite;
+      height: 1em;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="play-button" aria-label="Reproducir música de fondo">Tocar música</button>
+
+  <div class="letter-container">
+    <h1>Para mi linda novia, la más fuerte y mi orgullo</h1>
+
+    <div class="letter-text" id="original-text" style="display: none;">
+      A veces te describís como alguien fría o seria… pero yo veo más allá.
+
+      Veo a alguien que ha pasado mucho, y que aun así tiene el corazón para decir "te quiero",y cuando lo hacés… se siente tan sincero que podría detener el tiempo.
+
+      Sos sensible, amable y fuerte. Sos una luz que brilla aunque el mundo haya sido injusto muchas veces.
+
+      Y yo estoy orgulloso de vos, de cómo seguís adelante, incluso cuando estás cansada.
+
+      Me gusta cada parte de ti, incluso aquellas que creés que deberías esconder.
+      
+      Porque en cada una de ellas está la persona que yo realmente amo y quiero para toda la vida.
+
+      Aunque los días sean pesados, quiero que sepas que no estás sola.
+      Yo estoy acá, y voy a seguir acá para vos.
+
+      Te quiero, mon tout. ❤️
+    </div>
+
+    <div class="letter-text" id="typed-text"><span class="cursor"></span></div>
+
+    <div class="gallery">
+      <img src="imagenes/akali.jpg" alt="Akali" title="Akali" />
+      <img src="imagenes/irelia.jpg" alt="Irelia" title="Irelia" />
+      <img src="imagenes/bayonetta.jpg" alt="Bayonetta" title="Bayonetta" />
+      <img src="imagenes/leon.jpg" alt="Leon - Resident Evil" />
+      <img src="imagenes/gintama.jpg" alt="Gintama" title="Gintama" />
+      <img src="imagenes/honkai.jpg" alt="Honkai Star Rail" title="Honkai Star Rail" />
+    </div>
+
+    <div class="thank-you">
+      Gracias por ser vos. Estoy feliz de compartir mi vida con alguien tan increíble, espero que esto pueda animarte aun que sea un poco. 💖
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+      <source src="musica.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <audio id="key-sound" preload="auto">
+      <source src="tecla.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+  </div>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const playButton = document.getElementById('play-button');
+    const originalText = document.getElementById("original-text").innerText;
+    const typedText = document.getElementById("typed-text");
+    let index = 0;
+    let isWritingFinished = false; // Bandera para saber si la escritura ha terminado
+
+    function typeWriter() {
+      const cursor = document.querySelector('.cursor');
+      const keySound = document.getElementById('key-sound');  // Obtener el elemento de audio
+
+      if (index < originalText.length) {
+        const char = originalText.charAt(index);
+        cursor.insertAdjacentHTML('beforebegin', char === "\n" ? "<br>" : char);
+
+        // Reproducir el sonido si no es un espacio
+        if (char !== " " && keySound) {
+          keySound.currentTime = 0;  // Reiniciar el sonido desde el principio
+          keySound.play();  // Reproducir el sonido
+        }
+
+        index++;
+        setTimeout(typeWriter, 30); // Velocidad de escritura
+      } else {
+        cursor.remove(); // Eliminar el cursor al finalizar
+        isWritingFinished = true; // Marcar como terminado
+        keySound.pause(); // Detener el sonido cuando la escritura termina
+        keySound.currentTime = 0; // Reiniciar el sonido
+      }
+    }
+
+    window.addEventListener('load', () => {
+      // música
+      music.play().catch(() => {
+        playButton.style.display = 'block';
+      });
+
+      // fondo según hora
+      const hour = new Date().getHours();
+      const body = document.body;
+      if (hour >= 6 && hour < 18) {
+        body.classList.add("fondo-dia");
+      } else {
+        body.classList.add("fondo-noche");
+      }
+
+      // iniciar escritura
+      typeWriter();
+    });
+
+    playButton.addEventListener('click', () => {
+      music.play();
+      playButton.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
